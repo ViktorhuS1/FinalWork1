@@ -28,10 +28,11 @@ string[] EditorText(string[] text, int sizeWord)
             newText[count] = text[i];
             count++;
         }
+        
     }
+    Array.Resize(ref newText, count);
     return newText;
 }
-
 
 Console.WriteLine("Введите  ваш текст: ");
 string text = Console.ReadLine();
@@ -42,7 +43,13 @@ int lengthString = Convert.ToInt32(Console.ReadLine());
 string[] textArray = text.Split(" ");
 string[] editText = EditorText(textArray, lengthString);
 
+if (editText.Length == 0) 
+{
+    Console.Write("Не найдено подходящих элементов:(");
+    return;
+}
 Console.WriteLine("Ваш текст: ");
 PrintArray(textArray);
+
 Console.WriteLine("После редакции: ");
 PrintArray(editText);
