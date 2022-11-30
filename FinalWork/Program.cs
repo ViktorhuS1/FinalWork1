@@ -6,11 +6,13 @@
 // При решении не рекомендуется пользоваться коллекциями, 
 // лучше обойтись исключительно массивами.
 
+Console.WriteLine("Введите  ваш текст: ");
+string text = Console.ReadLine();
 
+string[] textArray = text.Split(" ");
 
-string[] array = {"firstStr", "secondStr", "thirdStr"};
-
-for (int i = 0; i < array.Length; i++)
+for (int i = 0; i < textArray.Length; i++)
 {
-    if(array[i].Length <= 3) Console.WriteLine(array[i]); 
+    if (textArray[i].Length <= 3) Console.Write($"{textArray[i]}, ");
 }
+
