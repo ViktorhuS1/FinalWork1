@@ -22,8 +22,8 @@ string[] EditorText(string[] text, int sizeWord)
     string[] newText = new string[text.Length];
     for (int i = 0; i < newText.Length; i++)
     {
-        
-        if (text[i].Length <= sizeWord) 
+
+        if (text[i].Length <= sizeWord)
         {
             newText[count] = text[i];
             count++;
@@ -33,7 +33,6 @@ string[] EditorText(string[] text, int sizeWord)
 }
 
 
-
 Console.WriteLine("Введите  ваш текст: ");
 string text = Console.ReadLine();
 
@@ -41,10 +40,9 @@ Console.WriteLine("Введите  максимальную длину стро�
 int lengthString = Convert.ToInt32(Console.ReadLine());
 
 string[] textArray = text.Split(" ");
-
+string[] editText = EditorText(textArray, lengthString);
 
 Console.WriteLine("Ваш текст: ");
 PrintArray(textArray);
-string[] editText = EditorText(textArray, lengthString);
 Console.WriteLine("После редакции: ");
 PrintArray(editText);
